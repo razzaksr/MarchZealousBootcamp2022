@@ -1,12 +1,12 @@
 import React from 'react'
 import ReactDom from 'react-dom'
+import App, { Hey } from './App'
 
 // render("what to show","where to show")
 ReactDom.render(
     <>
-        <h1>Welcome to Zealous Bootcamp</h1>
-        <p>Razak Mohamed S</p>
-        <h2>Zealous Tech Corp</h2>
+        <App/>
+        <Hey/>
     </>
     ,document.getElementById("root")
 )
