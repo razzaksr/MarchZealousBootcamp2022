@@ -1,12 +1,43 @@
 import React from "react";
 import { Sarathy } from "./Manoj";
 
-function App()
+const App=()=>
 {
+    // internal styles 
+    const yet={
+        border: '4px',
+        borderColor: 'red',
+        borderStyle: 'dashed'
+    }
+
+    const imgsty={
+        width:'600px',
+        height:'300px',
+        borderRadius:'55px',
+        boxShadow:'10px 10px 10px maroon'
+    }
+
+    const own={
+        fontSize:'60px',
+        fontFamily:'Monotype Corsiva'
+    }
+
     return(
     <>
-        <h1>React BAsic Functional Componenet</h1>
-        <Sarathy/>
+        <p style={{color:'blue',backgroundColor:'green',
+        textTransform:'uppercase'}}> 
+        Hello there! 
+        </p>
+        <hr color="blue"/>
+        <p style={own}>Annamalai</p>
+        <h1>Bootcamp frameworks</h1>
+        <ol style={yet}>
+            <li>React</li><li>Spring boot</li><li>Hibernate</li>
+            <li>JUnit</li><li>Mockito</li>
+            <li>Jenkins</li>
+        </ol>
+        <img width="500px" height="500px" src="pictures/compoents of react.png"/>
+        <img style={imgsty} src="pictures/night.jpg"/>
     </>
     )
 }

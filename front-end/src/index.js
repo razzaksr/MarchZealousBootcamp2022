@@ -6,7 +6,7 @@ import App, { Hey } from './App'
 ReactDom.render(
     <>
         <App/>
-        <Hey/>
+        {/* <Hey/> */}
     </>
     ,document.getElementById("root")
 )
