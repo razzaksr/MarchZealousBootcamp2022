@@ -1,4 +1,5 @@
 import React from "react";
+import { Strap1 } from "./Bootsample";
 import { Sarathy } from "./Manoj";
 
 const App=()=>
@@ -24,6 +25,7 @@ const App=()=>
 
     return(
     <>
+        <Strap1/>
         <p style={{color:'blue',backgroundColor:'green',
         textTransform:'uppercase'}}> 
         Hello there! 
