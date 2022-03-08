@@ -1,8 +1,30 @@
-import React from "react"
+import React, { useState } from "react"
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css"
 export const Recruite=()=>{
+    //const[data,setData]=useState(initialization)
+    // person['resName']
+    // person.resName
+    const[person,setPerson]=useState({
+        "resName":"",
+        "resPay":0,
+        "resArea":"",
+        "resSkills":new Array()
+    })
+
+    const track=(manoj)=>{
+        const{name,value}=manoj.target
+        setPerson(
+            (old)=>{
+                return{
+                    ...old,
+                    [name]:value
+                }
+        }
+        )
+    }
+
     const gopi=()=>{
-        alert("Hired")
+        alert("Hired "+JSON.stringify(person))
     }
     const dhana=()=>{
         alert("Rejected")
@@ -17,6 +39,8 @@ export const Recruite=()=>{
                             <label>Resource Name</label>
                             <input type="text" 
                                 name="resName" 
+                                onChange={track}
+                                value={person.resName}
                                 placeholder="Name of the resource person"
                                 className="form-control"
                             />
@@ -26,7 +50,9 @@ export const Recruite=()=>{
                             <div className="col-md-6 col-sm-12">
                                 <label>Resource Commercial</label>
                                 <input
+                                    onChange={track}
                                     type="number"
+                                    value={person.resPay}
                                     name="resPay"
                                     placeholder="Commercial perday of the resource person"
                                     className="form-control"
@@ -34,7 +60,10 @@ export const Recruite=()=>{
                             </div>
                             <div className="col-md-6 col-sm-12">
                                 <label>Resource Location</label>
-                                <select name="resArea" className="form-select">
+                                <select name="resArea" 
+                                    className="form-select" 
+                                    onChange={track}
+                                    value={person.resArea}>
                                     <option>Select Location</option>
                                     <option>Chennai</option>
                                     <option>Banglore</option>
@@ -48,16 +77,19 @@ export const Recruite=()=>{
                             <input 
                                 type="checkbox" 
                                 name="java" 
+                                
                                 value="Java" 
                                 className="form-check-input"/>Java
                             <input 
                                 type="checkbox" 
-                                name="python" 
+                                name="python"
+                                
                                 value="Python"
                                 className="form-check-input ms-sm-5 ms-md-5 ms-lg-5"/>Python
                             <input 
                                 type="checkbox" 
-                                name="javascript" 
+                                name="javascript"
+                                
                                 value="Java Script" 
                                 className="form-check-input ms-sm-5 ms-md-5 ms-lg-5"/>Java Script
                         </div>
