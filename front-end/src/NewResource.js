@@ -11,6 +11,11 @@ export const Recruite=()=>{
         "resSkills":new Array()
     })
 
+    const tracks=(hey)=>{
+        const{name,value}=hey.target
+        person.resSkills.push(value)
+    }
+
     const track=(manoj)=>{
         const{name,value}=manoj.target
         setPerson(
@@ -20,6 +25,7 @@ export const Recruite=()=>{
                     [name]:value
                 }
         }
+        
         )
     }
 
@@ -77,19 +83,19 @@ export const Recruite=()=>{
                             <input 
                                 type="checkbox" 
                                 name="java" 
-                                
+                                onChange={tracks}
                                 value="Java" 
                                 className="form-check-input"/>Java
                             <input 
                                 type="checkbox" 
                                 name="python"
-                                
+                                onChange={tracks}
                                 value="Python"
                                 className="form-check-input ms-sm-5 ms-md-5 ms-lg-5"/>Python
                             <input 
                                 type="checkbox" 
                                 name="javascript"
-                                
+                                onChange={tracks}
                                 value="Java Script" 
                                 className="form-check-input ms-sm-5 ms-md-5 ms-lg-5"/>Java Script
                         </div>
