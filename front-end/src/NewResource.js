@@ -1,5 +1,6 @@
 import React, { useState } from "react"
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css"
+import {create, list} from './API'
 export const Recruite=()=>{
     //const[data,setData]=useState(initialization)
     // person['resName']
@@ -12,25 +13,27 @@ export const Recruite=()=>{
     })
 
     const tracks=(hey)=>{
-        const{name,value}=hey.target
+        const{value}=hey.target
         person.resSkills.push(value)
     }
 
     const track=(manoj)=>{
+        // extraction
         const{name,value}=manoj.target
         setPerson(
-            (old)=>{
+            (prev)=>{
                 return{
-                    ...old,
+                    ...prev,
                     [name]:value
                 }
-        }
-        
+            }
         )
     }
 
     const gopi=()=>{
-        alert("Hired "+JSON.stringify(person))
+        //alert("Hired "+JSON.stringify(person))
+        create(person)
+        
     }
     const dhana=()=>{
         alert("Rejected")
