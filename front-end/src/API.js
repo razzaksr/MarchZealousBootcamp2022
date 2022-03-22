@@ -32,3 +32,7 @@ export const create=(obj)=>{
 export const list=()=>{
     return myemployees
 }
+
+export const read=(index)=>{
+    return myemployees[index]
+}
