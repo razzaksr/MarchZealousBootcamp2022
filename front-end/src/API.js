@@ -34,5 +34,16 @@ export const list=()=>{
 }
 
 export const read=(index)=>{
-    return myemployees[index]
+    return myemployees[index];
+}
+
+export const fetchExact=(name)=>{
+    const tmp=myemployees.filter((element)=>{
+        return element.resName===name
+    })
+    return tmp[0]
+}
+
+export const alter=(place,data)=>{
+    myemployees[place]=data
 }

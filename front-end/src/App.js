@@ -2,12 +2,14 @@ import React from "react";
 import { Recruite } from "./NewResource";
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css"
 import { Home } from "./Home";
+import { Simple } from "./HookUseState";
 
 const App=()=>
 {
     return(
         <>
             <Home/>
+            {/* <Simple/> */}
         </>
     )
     // // internal styles 
