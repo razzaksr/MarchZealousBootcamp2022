@@ -47,3 +47,10 @@ export const fetchExact=(name)=>{
 export const alter=(place,data)=>{
     myemployees[place]=data
 }
+
+export const wash=(index)=>{
+    myemployees=myemployees.filter((d,i)=>{
+        return i!==index
+    })
+    return myemployees;
+}

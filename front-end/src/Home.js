@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css"
 import "../node_modules/bootstrap-icons/font/bootstrap-icons.css"
-import { byName, fetchExact, list, read } from "./API";
+import { byName, fetchExact, list, read, wash } from "./API";
 import { Recruite } from "./NewResource";
 import { Read } from "./Read";
 import { Update } from "./Update";
@@ -113,7 +113,10 @@ export const Home=()=>{
                                                 </button>
                                             </td>
                                             <td>
-                                                <button className="btn btn-outline-danger rounded-circle">
+                                                <button className="btn btn-outline-danger rounded-circle"
+                                                onClick={()=>{
+                                                    setTmpArray(wash(index))
+                                                }}>
                                                     Delete <i className="bi bi-trash-fill"></i>
                                                 </button>
                                             </td>
