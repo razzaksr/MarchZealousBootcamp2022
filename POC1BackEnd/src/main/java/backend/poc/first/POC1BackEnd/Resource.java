@@ -1,23 +1,29 @@
 package backend.poc.first.POC1BackEnd;
 
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Table;
 // Resource obj=new Resource();
 //System.out.println(obj);
 @Entity
+@Table(name="profiles")
 public class Resource 
 {
 	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name="pro_id")
 	private int resId;
+	@Column(name="candidate")
 	private String resName;
+	@Column(name="profficiency")
 	private String[] resSkills;
+	@Column(name="commercials")
 	private int resPay;
+	@Column(name="location")
 	private String resArea;
 	
 	public Resource() {
