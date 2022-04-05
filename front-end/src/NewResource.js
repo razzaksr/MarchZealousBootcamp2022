@@ -1,6 +1,7 @@
 import React, { useState } from "react"
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css"
 import {create, list} from './API'
+import { join } from "./Connect"
 export const Recruite=()=>{
     //const[data,setData]=useState(initialization)
     // person['resName']
@@ -30,10 +31,11 @@ export const Recruite=()=>{
         )
     }
 
-    const gopi=()=>{
+    const gopi=async()=>{
         //alert("Hired "+JSON.stringify(person))
-        create(person)
-        
+        //create(person)
+        const yet=await join(person);
+        alert(yet.data)
     }
     const dhana=()=>{
         alert("Rejected")
