@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { read } from "./API";
+import { reachOne } from "./Connect";
 
 export const Read=(arthi)=>{
 
@@ -7,15 +8,17 @@ export const Read=(arthi)=>{
         "resName":"",
         "resArea":"",
         "resPay":0,
-        "resSkills":[]
+        "resSkills":[],
+        "resId":0
     })
 
     useEffect(()=>{
         callReading()
     })
 
-    const callReading=()=>{
-        setEmployee(read(arthi.who))
+    const callReading=async()=>{
+        const t = await reachOne(arthi.who)
+        setEmployee(t.data)
     }
 
     return(

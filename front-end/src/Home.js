@@ -5,6 +5,7 @@ import { byName, fetchExact, list, read, wash } from "./API";
 import { Recruite } from "./NewResource";
 import { Read } from "./Read";
 import { Update } from "./Update";
+import { gather } from "./Connect";
 
 export const Home=()=>{
 
@@ -15,8 +16,9 @@ export const Home=()=>{
     const[pos,setPos]=useState(0)
     const[obj,setObj]=useState({})
 
-    const hello=()=>{
-        setTmpArray(list())
+    const hello=async()=>{
+        const t = await gather();
+        setTmpArray(t.data)
     }
 
     useEffect(()=>{
@@ -37,6 +39,7 @@ export const Home=()=>{
                     <button className="btn btn-outline-secondary" onClick={
                         ()=>{
                             setCreateView(false)
+                            window.location.assign("/")
                         }
                     }>
                         <i className="bi bi-skip-backward-btn-fill"></i> Back
@@ -92,7 +95,7 @@ export const Home=()=>{
                                             <td>
                                                 <button className="btn btn-outline-primary" onClick={()=>{
                                                     setReadView(true)
-                                                    setPos(index)
+                                                    setPos(ele.resId)
                                                 }}>
                                                     <i className="bi bi-book-half"></i>
                                                 </button>
