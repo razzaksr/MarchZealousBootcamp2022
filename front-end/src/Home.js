@@ -48,10 +48,11 @@ export const Home=()=>{
                 :
                 (updateView)?
                 <>
-                    <Update who={pos} mention={obj}/>
+                    <Update mention={obj}/>
                     <button className="btn btn-outline-secondary" onClick={
                         ()=>{
                             setUpdateView(false)
+                            window.location.assign("/")
                         }
                     }>
                         <i className="bi bi-skip-backward-btn-fill"></i> Back
@@ -108,9 +109,9 @@ export const Home=()=>{
                                                 <button className="btn btn-outline-warning rounded-circle"
                                                 onClick={()=>{
                                                     setUpdateView(true)
-                                                    setPos(index)
-                                                    const y=fetchExact(ele.resName)
-                                                    setObj(y)
+                                                    //setPos(index)
+                                                    //const y=fetchExact(ele.resName)
+                                                    setObj(ele)
                                                 }}>
                                                     Edit <i className="bi bi-pencil-fill"></i>
                                                 </button>

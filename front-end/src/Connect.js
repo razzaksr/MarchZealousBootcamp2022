@@ -16,3 +16,8 @@ export const reachOne=async(position)=>{
     const t = await axios.get(`${link}/getting/${position}`)
     return t;
 }
+
+export const updateOne=async(obj)=>{
+    const hai=await axios.put(`${link}/update`,obj)
+    return hai;
+}

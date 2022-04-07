@@ -26,10 +26,23 @@ public class Resource
 	@Column(name="location")
 	private String resArea;
 	
+	public void setResSkills(String resSkills) {
+		this.resSkills = resSkills.split(",");
+	}
+	
+	public Resource(String resName, String resSkills, int resPay, String resArea) {
+		super();
+		this.resName = resName;
+		this.resSkills = resSkills.split(",");
+		this.resPay = resPay;
+		this.resArea = resArea;
+	}
+	
 	public Resource() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
+	
 	public Resource(String resName, String[] resSkills, int resPay, String resArea) {
 		super();
 		this.resName = resName;
@@ -48,6 +61,7 @@ public class Resource
 	public void setResSkills(String[] resSkills) {
 		this.resSkills = resSkills;
 	}
+	
 	public int getResId() {
 		return resId;
 	}
