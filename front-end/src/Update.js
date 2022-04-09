@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { alter } from "./API";
 import { updateOne } from "./Connect";
 
@@ -16,8 +16,17 @@ export const Update=(annamalai)=>{
         "resSkills":annamalai.mention.resSkills
     })
 
+    useEffect(()=>{
+        let wind=""
+        person.resSkills.map((content)=>{
+            wind+=content+","
+        })
+        // replace resSkills from array to simple text/string
+        person.resSkills=wind
+    },[])
     const gopi=async()=>{
         //alter(pos,person)
+        person.resSkills=person.resSkills.split(",")
         const t = await updateOne(person)
         alert(t.data)
     }

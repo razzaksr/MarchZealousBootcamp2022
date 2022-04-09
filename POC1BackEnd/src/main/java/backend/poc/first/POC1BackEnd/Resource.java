@@ -8,6 +8,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+
+import org.springframework.beans.factory.annotation.Value;
 // Resource obj=new Resource();
 //System.out.println(obj);
 @Entity
@@ -26,17 +28,6 @@ public class Resource
 	@Column(name="location")
 	private String resArea;
 	
-	public void setResSkills(String resSkills) {
-		this.resSkills = resSkills.split(",");
-	}
-	
-	public Resource(String resName, String resSkills, int resPay, String resArea) {
-		super();
-		this.resName = resName;
-		this.resSkills = resSkills.split(",");
-		this.resPay = resPay;
-		this.resArea = resArea;
-	}
 	
 	public Resource() {
 		super();

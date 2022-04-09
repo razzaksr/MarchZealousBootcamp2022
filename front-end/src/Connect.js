@@ -12,6 +12,11 @@ export const gather=async()=>{
     return yet;
 }
 
+export const erase=async(pk)=>{
+    const t = await axios.delete(`${link}/del/${pk}`)
+    return t;
+}
+
 export const reachOne=async(position)=>{
     const t = await axios.get(`${link}/getting/${position}`)
     return t;

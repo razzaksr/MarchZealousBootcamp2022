@@ -5,7 +5,7 @@ import { byName, fetchExact, list, read, wash } from "./API";
 import { Recruite } from "./NewResource";
 import { Read } from "./Read";
 import { Update } from "./Update";
-import { gather } from "./Connect";
+import { erase, gather } from "./Connect";
 
 export const Home=()=>{
 
@@ -19,6 +19,12 @@ export const Home=()=>{
     const hello=async()=>{
         const t = await gather();
         setTmpArray(t.data)
+    }
+
+    const toErase=async(value)=>{
+        const hey=await erase(value)
+        alert(hey.data)
+        window.location.assign("/")
     }
 
     useEffect(()=>{
@@ -119,7 +125,8 @@ export const Home=()=>{
                                             <td>
                                                 <button className="btn btn-outline-danger rounded-circle"
                                                 onClick={()=>{
-                                                    setTmpArray(wash(index))
+                                                    //setTmpArray(wash(index))
+                                                    toErase(ele.resId)
                                                 }}>
                                                     Delete <i className="bi bi-trash-fill"></i>
                                                 </button>

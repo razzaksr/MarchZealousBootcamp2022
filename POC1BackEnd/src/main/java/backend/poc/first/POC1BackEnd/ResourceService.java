@@ -26,4 +26,12 @@ public class ResourceService
 	{
 		return repo.findById(week);
 	}
+	
+	public String remove(int key)
+	{
+		String nm=repo.findById(key).
+				orElse(new Resource()).getResName()+" has deleted";
+		repo.deleteById(key);
+		return nm;
+	}
 }
