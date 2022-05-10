@@ -34,6 +34,15 @@ public class Resource
 		// TODO Auto-generated constructor stub
 	}
 	
+	public Resource(int resId, String resName, String[] resSkills, int resPay, String resArea) {
+		super();
+		this.resId = resId;
+		this.resName = resName;
+		this.resSkills = resSkills;
+		this.resPay = resPay;
+		this.resArea = resArea;
+	}
+
 	public Resource(String resName, String[] resSkills, int resPay, String resArea) {
 		super();
 		this.resName = resName;
